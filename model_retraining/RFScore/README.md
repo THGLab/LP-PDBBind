@@ -1,6 +1,6 @@
-# RFscore_retrain
+# RF-Score Retrain
 
-Generation RF-Score-v1 descriptor and training file in Jupyter notebook for retraining with other datasets
+Generation of RF-Score-v1 descriptor and RF model training in Jupyter notebook for retraining and prediction with other datasets
 
 Original scripts see:
 http://chemistry.st-andrews.ac.uk/staff/jbom/group/RF-Score.html
