@@ -1,4 +1,4 @@
-#Vina PDBBind Retrain
+# Vina PDBBind Retrain
 
 To retrain and test vina on UCBSPlit, run python on **vina_reweight.py** :
 ```python vina_reweight.py```
