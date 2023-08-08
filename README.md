@@ -20,7 +20,7 @@ This repository contains all the code for creating LP-PDBBind of PDBBind dataset
 
 ## Compiled datasets
 ### LP-PDBBind
-The LeakProof of PDBBind 2020 (LP-PDBBind) is given in `dataset/UCBSplit.csv`. The `new_split` column corresponds to which category the data belongs to in UCBSplit. Additionally, `CL1`, `CL2`, `CL3` and `covalent` are boolean columns indicating whether the data is in the corresponding clean levels, and whether the data is covalent or not. Therefore, the following python code reads in the dataset and selects all data in the train set, and satisfy CL1 and non-covalent:
+The LeakProof of PDBBind 2020 (LP-PDBBind) is given in `dataset/LP_PDBBind.csv`. The `new_split` column corresponds to which category the data belongs to in UCBSplit. Additionally, `CL1`, `CL2`, `CL3` and `covalent` are boolean columns indicating whether the data is in the corresponding clean levels, and whether the data is covalent or not. Therefore, the following python code reads in the dataset and selects all data in the train set, and satisfy CL1 and non-covalent:
 
 ```python
 import pandas as pd
