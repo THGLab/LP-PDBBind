@@ -20,7 +20,7 @@ This repository contains all the code for creating LP-PDBBind of PDBBind dataset
 
 ## Compiled datasets
 ### LP-PDBBind
-The LeakProof of PDBBind 2020 (LP-PDBBind) is given in `dataset/LP_PDBBind.csv`. The `new_split` column corresponds to which category the data belongs to in UCBSplit. Additionally, `CL1`, `CL2`, `CL3` and `covalent` are boolean columns indicating whether the data is in the corresponding clean levels, and whether the data is covalent or not. Therefore, the following python code reads in the dataset and selects all data in the train set, and satisfy CL1 and non-covalent:
+The LeakProof of PDBBind 2020 (LP-PDBBind) is given in `dataset/LP_PDBBind.csv`. The `new_split` column corresponds to which category the data belongs to in LP-PDBBind. Additionally, `CL1`, `CL2`, `CL3` and `covalent` are boolean columns indicating whether the data is in the corresponding clean levels, and whether the data is covalent or not. Therefore, the following python code reads in the dataset and selects all data in the train set, and satisfy CL1 and non-covalent:
 
 ```python
 import pandas as pd
@@ -54,7 +54,7 @@ tar -xzf dataset/EGFR.tgz
 which will create the `EGFR` folder. Inside the folder there will be `info.csv` and three folders `protein`, `ligand` and `ligand_addH`. The `info.csv` contains the meta-information of the dataset, and the other folders contain the prepared structure files for the protein-ligand complexes.
 
 ## Dataset creation scripts
-Inside the `dataset_creation` folder there are multiple jupyter notebooks for the creation of UCBSplit and BDB2020+ dataset.
+Inside the `dataset_creation` folder there are multiple jupyter notebooks for the creation of LP-PDBBind and BDB2020+ dataset.
 
 ### Required packages
 * pandas
