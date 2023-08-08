@@ -1,5 +1,5 @@
-# UCBSplit: Developing More Generalizable Scoring Functions with Better Utilization of the PDBBind Dataset
-This repository contains all the code for creating UCBSplit of PDBBind dataset, building the BDB2020+ dataset, prepared dataset files, and scripts for retraining AutoDock vina, IGN, RFScore and DeepDTA models
+# LP-PDBBind: Developing More Generalizable Scoring Functions with Better Utilization of the PDBBind Dataset
+This repository contains all the code for creating LP-PDBBind of PDBBind dataset, building the BDB2020+ dataset, prepared dataset files, and scripts for retraining AutoDock vina, IGN, RFScore and DeepDTA models
 
 ## Authors
 * Jie Li `jerry-li1996@berkeley.edu`
@@ -19,12 +19,12 @@ This repository contains all the code for creating UCBSplit of PDBBind dataset, 
 ![](tables/EGFR.png)
 
 ## Compiled datasets
-### UCBSplit
-The UCBSplit of PDBBind 2020 is given in `dataset/UCBSplit.csv`. The `new_split` column corresponds to which category the data belongs to in UCBSplit. Additionally, `CL1`, `CL2`, `CL3` and `covalent` are boolean columns indicating whether the data is in the corresponding clean levels, and whether the data is covalent or not. Therefore, the following python code reads in the dataset and selects all data in the train set, and satisfy CL1 and non-covalent:
+### LP-PDBBind
+The LeakProof of PDBBind 2020 (LP-PDBBind) is given in `dataset/UCBSplit.csv`. The `new_split` column corresponds to which category the data belongs to in UCBSplit. Additionally, `CL1`, `CL2`, `CL3` and `covalent` are boolean columns indicating whether the data is in the corresponding clean levels, and whether the data is covalent or not. Therefore, the following python code reads in the dataset and selects all data in the train set, and satisfy CL1 and non-covalent:
 
 ```python
 import pandas as pd
-df = pd.read_csv('dataset/UCBSplit.csv', index_col=0)
+df = pd.read_csv('dataset/LP_PDBBind.csv', index_col=0)
 df_train = df[(df['new_split'] == 'train') & df.CL1 & ~df.covalent]
 ```
 Only the meta-information (including pdbid, category, clean levels, whether is covalent, ligand SMILES strings, protein sequence, binding affinity values, etc.) are present in the csv file. Users need to download the prepared structure files (.pdb format for the proteins and .sdf/.mol2 format for the ligands) from the [PDBBind website](http://www.pdbbind.org.cn/download.php).
@@ -66,7 +66,7 @@ Inside the `dataset_creation` folder there are multiple jupyter notebooks for th
 
 * `calc_similarities.ipynb`: Extracting protein types from the categories, calculate pairwise ligand fingerprint similarities and pairwise protein sequence similarities.
 
-* `create_splitting.ipynb`: Creating the UCBSplit of PDBBind dataset based on protein and sequence similarity.
+* `create_splitting.ipynb`: Creating the LP-PDBBind splitting of PDBBind dataset based on protein and sequence similarity.
 
 * `CL_filters`: Scripts for defining the three clean levels (CL1-CL3), and finding out covalent binders in PDBBind.
 
